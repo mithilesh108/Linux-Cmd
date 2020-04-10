@@ -1,0 +1,304 @@
+To count all sub folder inside student folder except itself : find . -mindepth 1 -type d | wc -l
+
+To count all sub files inside current folder except folder : find . -type f | wc -l
+
+File it from the directory location where the count needs to be placed in file : find . -type f | wc -l >abc.txt(only no)
+
+File as well as dire it will paced in file with the size :find . -type f | du -ah > abc.txt
+
+To print only sub folder's file size with file name : find . -type f -exec du -a {} + (but kb mb gb it wont show)
+
+To print all sub folders size except all sub files : find . -type f | du -ch   (with mb gb kb it'd show)
+
+To print all sub folder's file only with sorting order without MB/GB/KB : find . -type f -exec du -a {} + | sort -n -r  
+
+To rename all fies form one folder :  rename .zip .large_zip *.zip
+
+-bash: ./file_details.sh: /bin/sh^M: bad interpreter: No such file or directory
+To change script file windows to inux : dos2unix file_details.sh
+dos2unix: converting file sip_details.sh to UNIX format ...
+
+To print all folder size from current dire : du -sh *
+
+To send all files name in a file =  ls > file.txt
+
+To count files inside zip : unzip -l student-1.zip | wc -l(u have to reduce 5 with final count)
+
+To count files inside zip : unzip -l student-1.zip(print all the files names and last statement count)
+
+To count files inside zip : fileCnt=`expr $(unzip -l student.zip |wc -l) - "5"`;echo "Files inside zip is = ${fileCnt}"
+
+To download specific file from zip : unzip -p student-1.zip eas_pdi.xml > sdfsd.xml
+
+To store all file from zip in text file : unzip -Z1 student-1.zip > file.txt(to add all files name which is exist in zip)
+
+File count in current directory except itself : ls -1 | wc -l
+
+File count in current directory with itself : ls | wc -l
+
+
+Create text file and place all file names in the current directory: ls > file_name.txt
+
+SCP command: scp {source} presops@xsnl50a491x.pharma.aventis.com:{destination}
+
+Find a file from list of zip files: for f in `ls *.zip`; do echo "$f: "; unzip -l $f | grep <file_name>; done
+
+Find a file from list of directories: find . -name "pattern" -print
+
+Find the size of a directory: du -sh <directory_name>
+
+Find list of empty directory/subdirectory from a directory: find . -empty -type d
+
+Find disc memory: df -h /data/transformation/standard_output/
+
+See running process: ps -ef
+
+Find specific file loc : for f in `ls *.zip`; do echo "$f: "; unzip -l $f | grep TCD11088_JSMO2012_draft1; done
+
+To Find file in list of ZIPs
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+                                                                                 (file   name             )
+
+[presops@xsnl50a493p VAC_SD]$ for f in `ls *.zip`; do echo "$f: "; unzip -l $f | grep 2015SA085101_SubmissionReport_05-Apr-2016.pdf; done
+
+ 
+
+for f in `ls *.zip`; do echo "$f: "; unzip -l $f | grep ci1442336174193.1827979@fdsul08620_te2.html; done
+
+for f in `ls *.zip`; do echo "$f: "; unzip -l $f | grep U2002-00204_Literature_23-Aug-2016.pdf; done
+
+ 
+
+ 
+
+ 
+
+to find out special character in whole folder
+
+-------------------------------------------------
+
+grep --include=\*.xml -r '/data/rec_cifs/SCI_PUB_REV/CLEAR/' -e "&#x" > /data/rec_cifs/PEACOCK/filename2.txt
+
+grep --include=\*.xml -rl "&#x" /data/rec_cifs/SCI_PUB_REV_CLEAR/CLEAR/
+
+grep --include=\*.xml -r 'GLOBAL_TM-NEMO-0067-1.zip' -e "O,P'- DDD" > /data/transformation/standard_output/NEMO/SIP_old/Trademark_Country/filename2.txt
+
+ 
+
+To know how many attachements are there
+
+-----------------------------------------------
+
+[presops@xsnl11c569k ~]$ cd "/data/transformation/standard_input/MGE_SPR/Legacy publications/"
+
+[presops@xsnl11c569k Legacy publications]$ find . -type f | wc -l
+
+21471
+
+[presops@xsnl11c569k Legacy publications]$ ls > "/data/transformation/standard_input/MGE_SPR/legacy_folder.txt"
+
+ 
+
+----------------------------------------------------------------------------
+
+clear (erase yr screen )
+
+more detail_report_raw.xml(from file  dire location)
+
+grep '<records>' detail_report_raw.xml
+
+ 
+
+To find specific file inside zip : for f in `ls *.zip`; do echo "$f: "; unzip -l $f | grep "2010_09_17_MACI00206_05 Bertrand_NTF_ISF 2.5:_420.pdf"; done
+
+ 
+
+ 
+
+to count publication id in CLEAR folder
+
+---------------------------------------------
+
+[x010655a@xsnl11c569k CLEAR]$ find . -name publication.xml | wc -l
+
+21660
+
+[x010655a@xsnl11c569k CLEAR]$
+
+-----------------------------------------------------------------------
+
+To count file/folder in current dire=    ls -1 | wc -l
+
+ 
+
+-----------------------------------------------------------------------------------
+
+to convert windows to linux file
+
+[presops@xsnl50a493p IHRIS_CON_TRANSFORM]$ dos2unix preserve_ihr_cvg_transformation_launch.sh
+
+ 
+
+scp -r filename presops@.pharma.aventis.com:
+
+               presops@xsnl11c569k.pharma.aventis.com: /data/transformation/standard_output/IHRIS_CVG/RefTable/
+
+                       presops@xsnl11c569k
+
+SCP command: scp {source} presops@xsnl11c569k.pharma.aventis.com:{destination}
+
+p011644A@xsnl11c569k.pharma.aventis.com
+
+scp -r /data/IHRIS_input/Metadata/IHRIS_CVG/RefTable/IHR_CVG_Ref_Table.xlsx p011644A@xsnl11c569k.pharma.aventis.com: /data/transformation/standard_output/IHRIS_CVG/RefTable/
+
+ 
+
+scp -r "/data/IHRIS_input/Metadata/IHRIS_CVG/RefTable/IHR_CVG_Ref_Table.xlsx" p011644A@xsnl11c569k.pharma.aventis.com:/data/transformation/standard_output/IHRIS_CVG/RefTable/
+
+ 
+
+scp -r "/data/IHRIS_input/Metadata/IHRIS_CVG/RefTable/IHR_CVG_Ref_Table.xlsx" presops@xsnl11c569k.pharma.aventis.com:/data/transformation/standard_output/IHRIS_CVG/RefTable/
+
+ 
+
+ 
+
+--------------------------  working in stage                                          (stage SSH session ID)
+
+scp -r "/data/IHRIS_input/Metadata/IHRIS_CVG/RefTable/IHR_CVG_Ref_Table.xlsx" presops@xsnl50a491x.pharma.aventis.com:/data/transformation/standard_output/Chris/
+
+---------------------------copy from test to stage------------------------------------------
+
+scp -r "/apps/preserve/transform/IHRIS_CON_TRANSFORM/ihr_report_ActiveEmployees.txt" presops@xsnl50a491x.pharma.aventis.com:/data/transformation/standard_output/Chris/
+
+---------------------------copy from dev to test------------------------------------------
+
+scp -r "/data/transformation/standard_output/PVeSubmitter/SIP_vac/VAC_CD/*" p011644a@xsnl11c569k.pharma.aventis.com:/data/rec/SIP/PveSubmitter/  ((this is not working))
+
+scp -r *.zip p011644a@xsnl11c569k.pharma.aventis.com:/data/rec/SIP/PveSubmitter/   (this is working)
+
+scp -r * p011644a@xsnl11c569k.pharma.aventis.com:/data/rec/SIP/PveSubmitter/   (whole folder will copy)
+
+ 
+
+scp -r "/data/transformation/standard_output/PVeSubmitter/SIP_vac/VAC_CD/" p011644a@xsnl11c569k.pharma.aventis.com:/data/rec/SIP/PveSubmitter/
+
+scp -r .zip presops@xsnl11c569k.pharma.aventis.com:/data/rec/SIP/PveSubmitter/new
+
+ 
+
+scp -rp "/data/transformation/standard_output/IHR_CVG/SIP/" presops@xsnl50a493p.pharma.aventis.com:/data/T360_Config/
+
+ 
+
+To copy stg to dev server : scp -r filename.txt presops@xsnl50a493p.pharma.aventis.com:/data/transformation/dummy
+
+To copy dev to test server :scp -r * p011644a@xsnl11c569k.pharma.aventis.com:/data/IHRIS_Config/pc/ (all folders will copy )
+
+ 
+
+[presops@xsnl50a493p Index]$ scp *zip p011644a@xsnl11c569k.pharma.aventis.com:/data/nemo/  (locate first folder dire dev to tedt copy paste)
+
+ 
+
+To invalidate sips in dev dqman
+
+----------------------------
+
+destroy,c,0801ec62800a365b
+
+-------------------------
+
+stg   : presops@xsnl50a491x.pharma.aventis.com
+
+test  : p011644A@xsnl11c569k.pharma.aventis.com
+
+dev   : presops@xsnl50a493p.pharma.aventis.com
+
+prod  : presops@xspl50a492c.pharma.aventis.com
+
+       
+
+/data/transformation/standard_input/Prisma_Clubnet/prisma_content_files/
+
+To know how many process running in background
+
+---------------------------------------------------
+
+To see scrip file is running or not : ps -ef | grep "veronise_folder_files_count.sh"
+
+[presops@xsnl11c569k p011644a]$ ps -ef | grep java
+
+presops   5521  5520 15 06:08 pts/3    01:02:27 /apps/jdks/jdk1.7.0_17/bin/java -Dlogback.configurationFile=../logback.xml -Xms1024m -Xmx2048m -DHOLDING_NAME=HR_CPPF -DPRODUCER_NAME=ihr_cvg -DsourceFilePath=/data/IHRIS_input/Attributes -DkeyPath=ActiveRecordFolder -DappName=CVG -cp conf:lib/* main.IHRCppfApplication
+
+presops   6087  6086 15 06:12 pts/1    01:03:14 /apps/jdks/jdk1.7.0_17/bin/java -Dlogback.configurationFile=../logback.xml -Xms1024m -Xmx2048m -DHOLDING_NAME=HR_CPPF -DPRODUCER_NAME=ihr_cvg -DsourceFilePath=/data/IHRIS_input/Attributes -DkeyPath=InactiveRecordFolder -DappName=CVG -cp conf:lib/* main.IHRCppfApplication
+
+ 
+
+To Kill the running process :
+
+-------------------------------
+
+kill -9 5521
+
+----------------------------------
+
+To run process in background when unfortunally process closed :
+
+-------------------------------------------------
+
+nohup ./preserve_mge_spr_launch.sh "/data/rec_cifs/SCI_PUB_REV_CLEAR/CLEAR" CLEAR &
+
+----------------------------------------------------------------
+
+To see running logs file on console = tail -100f IHR_InactiveRecordFolder.log
+
+-----------------------------------------------------------------------------
+
+To find date and time of file =stat -c '%y : %n' filename
+
+To find date of file = [presops@xsnl50a491x Vaccines_Output]$ ls -l | grep 2016SA050398_SubmissionReport_16-Mar-2016.pdf (space should not be there in file's name)
+
+To find specific file in folder =find . -name 2016SA050398_SubmissionReport_16-Mar-2016.pdf  find . -name "2016SA060353_Submission report_30 Mar 2016.pdf"
+
+To find specific file in folder =find . -name "2016SA060353_Submission report_30 Mar 2016.pdf"(if space put in double qutation)
+
+ 
+
+========================================================================================================
+
+To see eas_pdi.xml from Zip file : unzip -p GLOBAL_TM-NEMO-0018-1.zip eas_pdi.xml(will show in console)
+
+To see eas_pdi.xml from Zip file : unzip -p GLOBAL_TM-NEMO-0018-1.zip eas_pdi.xml >eas_pdi.xml(will download in current dire)
+
+To print all files name of zip on console  : unzip -Z1 zip_file_name
+
+-----------------------------------------------------------------------------------------------------------------------
+
+cat - Concatenate and print the content of files.
+
+To Concatenate two files in one file : cat 67_pdi.xml 67_sip.xml > 67.txt
+
+To know or print absolute directory on console : pwd
+
+To logout current session : exit
+
+ 
+
+To find specific file in folder =find . -name "2010-09-17_MACI00206_05 Bertrand_NTF_ISF 5.3:.pdf"
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
