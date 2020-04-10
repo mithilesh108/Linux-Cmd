@@ -1,0 +1,48 @@
+
+To count file/folder with subdirectory from curent folder :  find . -name filename/foldername | wc -l
+
+To count all sub folder inside student folder except itself : find . -mindepth 1 -type d | wc -l
+
+To count all sub files inside current folder except folder : find . -type f | wc -l
+
+File it from the directory location where the count needs to be placed in file : find . -type f | wc -l >abc.txt(only no)
+
+File as well as dire it will paced in file with the size :find . -type f | du -ah > abc.txt
+
+To print only sub folder's file size with file name : find . -type f -exec du -a {} + (but kb mb gb it wont show)
+
+To print all sub folders size except all sub files : find . -type f | du -ch   (with mb gb kb it'd show)
+
+To print all sub folder's file only with sorting order without MB/GB/KB : find . -type f -exec du -a {} + | sort -n -r  
+
+To rename all fies form one folder :  rename .zip .large_zip *.zip
+
+To print all folder size from current dire : du -sh *
+
+To send all files name in a file =  ls > file.txt
+
+To count files inside zip : unzip -l student-1.zip | wc -l(u have to reduce 5 with final count)
+
+To count files inside zip : unzip -l student-1.zip(print all the files names and last statement count)
+
+To count files inside zip : fileCnt=`expr $(unzip -l student.zip |wc -l) - "5"`;echo "Files inside zip is = ${fileCnt}"
+
+To download specific file from zip : unzip -p student-1.zip eas_pdi.xml > sdfsd.xml
+
+To store all file from zip in text file : unzip -Z1 student-1.zip > file.txt(to add all files name which is exist in zip)
+
+Find a file from list of zip files: for f in `ls *.zip`; do echo "$f: "; unzip -l $f | grep <file_name>; done
+
+Find a file from list of directories: find . -name "pattern" -print
+
+Find list of empty directory/subdirectory from a directory: find . -empty -type d
+
+Find specific file loc : for f in `ls *.zip`; do echo "$f: "; unzip -l $f | grep filename; done
+
+Find disc memory: df -h /data/transformation/standard_output/
+
+See running process: ps -ef
+
+File count in current directory except itself : ls -1 | wc -l
+
+File count in current directory with itself : ls | wc -l
