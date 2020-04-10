@@ -1,0 +1,31 @@
+-bash: ./file_details.sh: /bin/sh^M: bad interpreter: No such file or directory
+To change script file windows to inux : dos2unix file_details.sh
+dos2unix: converting file sip_details.sh to UNIX format ...
+
+To invalidate aip in documentum  : destroy,c,id
+
+To see scrip file is running or not : ps -ef | grep "student.sh"
+
+To see how many java process running in background :  ps -ef | grep java
+
+To Kill the running process : kill -9 processId
+
+To run process in background : nohup ./student_launch.sh "/data/student" appNmae &> filename.out &
+
+To see running logs file on console = tail -100f logfilename
+
+to find out special character in whole folder
+
+grep --include=\*.xml -r '/data/home/mithilesh/folder/' -e "&#x" > /data/home/text.txt
+
+grep --include=\*.xml -rl "&#x" /data/home/mithilesh/folder/
+
+grep --include=\*.xml -r 'GLOBAL_student-0067-1.zip' -e "O,P'- DDD" > /data/filename.txt
+----------------------------------------------- 
+SCP command: scp {source} hostname:{destination}
+ 
+scp -rp "/data/SIP/" fullHostName:/data/student/
+
+To copy one server to another server(dev to test) : scp -r filename.txt fullHostName:/data/transformation/dummy
+
+To copy dev to test server :scp -r * fullHostName:/data/student/pc/ (all folders will copy )
