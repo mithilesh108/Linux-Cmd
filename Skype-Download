@@ -1,0 +1,7 @@
+How to Install Skype on Ubuntu 18.04
+
+First command : wget https://go.skype.com/skypeforlinux-64.deb
+
+Secodne command : sudo apt install ./skypeforlinux-64.deb
+
+That's all, search in app container like skype
