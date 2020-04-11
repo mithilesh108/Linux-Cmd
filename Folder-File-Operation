@@ -1,3 +1,6 @@
+To create folders : mkdir -r /abc/def/ghi
+
+To create file  : touch filename
 
 To count file/folder with subdirectory from curent folder :  find . -name filename/foldername | wc -l
 
